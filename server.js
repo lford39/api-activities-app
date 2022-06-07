@@ -115,12 +115,13 @@ app.get('/', (request,response)=>{
 })
 
 app.get('/api/:activityName', (request, response)=>{
-    const activityName = request.params.activityName.toLowerCase()
-    if(activities[activityName]){
-        response.json(activities[activityName])
-        console.log(activities[activityName])
+    const activitiesName = request.params.activityName.toLowerCase()
+    if(activities[activitiesName]){
+        response.json(activities[activitiesName])
+        console.log(response.json(activities[activitiesName]))
     }else{
         response.json('Unknown parameter')
+        console.log(response.json('Unknown parameter'))
     }
 })
 
